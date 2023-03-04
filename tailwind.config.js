@@ -6,6 +6,12 @@ module.exports = {
     "./components/**/*.{js,ts,jsx,tsx}",
   ],
   theme: {
+    fontFamily: {
+      genshin: ["genshin"],
+      khaenriah: ["khaenriah"],
+      teyvat: ["teyvat"],
+      lato: ["Lato"]
+    },
     extend: {},
   },
   plugins: [],

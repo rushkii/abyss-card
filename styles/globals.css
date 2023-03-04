@@ -1,3 +1,4 @@
+@import url("https://fonts.googleapis.com/css2?family=Lato&display=swap");
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
@@ -47,8 +48,8 @@
 @media (prefers-color-scheme: dark) {
   :root {
     --foreground-rgb: 255, 255, 255;
-    --background-start-rgb: 0, 0, 0;
-    --background-end-rgb: 0, 0, 0;
+    --background-start-rgb: 9,11,24;
+    --background-end-rgb: 14,33,73;
 
     --primary-glow: radial-gradient(rgba(1, 65, 255, 0.4), rgba(1, 65, 255, 0));
     --secondary-glow: linear-gradient(
@@ -108,4 +109,19 @@ a {
   html {
     color-scheme: dark;
   }
+}
+
+@font-face {
+  font-family: "genshin";
+  src: url("../assets/fonts/genshin.ttf");
+}
+
+@font-face {
+  font-family: "khaenriah";
+  src: url("../assets/fonts/Khaenriah-Regular.ttf");
+}
+
+@font-face {
+  font-family: "teyvat";
+  src: url("../assets/fonts/Teyvat-Regular.ttf");
 }
