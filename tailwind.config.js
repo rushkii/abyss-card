@@ -7,10 +7,10 @@ module.exports = {
   ],
   theme: {
     fontFamily: {
-      genshin: ["genshin"],
-      khaenriah: ["khaenriah"],
-      teyvat: ["teyvat"],
-      lato: ["Lato"]
+      genshin: ["var(--genshin-font)", "genshin"],
+      khaenriah: ["var(--khaenriah-font)", "khaenriah"],
+      teyvat: ["var(--teyvat-font)", "teyvat"],
+      lato: ["var(--lato-font)", "Lato"]
     },
     screens: {
       "sm": "320px",
