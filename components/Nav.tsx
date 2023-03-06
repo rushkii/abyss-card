@@ -9,8 +9,8 @@ const Nav = () => {
     let currentPath = router.pathname;
 
     return (
-        <div className={`flex sm:justify-center md:justify-between items-center px-3 py-2 w-[100%] font-teyvat border-b-[0.1px]
-                        border-b-[#cbd5e11a] backdrop-blur bg-slate-900`
+        <div className={`flex sm:justify-center md:justify-between items-center px-3 py-2 w-[100%] font-teyvat
+                        border-b-[#cbd5e11a] backdrop-blur bg-slate-900 border-b-[0.1px] relative z-10`
         }>
             <Link href="/" title="Abyss" className="sm:text-2xl lg:text-3xl 2xl:text-4xl">Abyss</Link>
             <ul className="space-x-3 sm:hidden lg:flex text-xl">
