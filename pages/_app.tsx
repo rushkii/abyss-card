@@ -1,6 +1,7 @@
 import '@/styles/globals.css'
 import type { AppProps } from 'next/app'
 import { fontGenshin, fontKhaenriah, fontTeyvat, fontLato } from '@/data/fonts'
+import Nav from '@/components/Nav'
 import Footer from '@/components/Footer'
 
 
@@ -15,6 +16,7 @@ export default function App({ Component, pageProps }: AppProps) {
           --lato-font: ${fontLato.style.fontFamily};
         }
       `}</style>
+      <Nav/>
       <Component {...pageProps} />
       <Footer/>
     </>
