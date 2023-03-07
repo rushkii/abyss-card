@@ -12,7 +12,7 @@ const About = () => {
                 }>
                     <div>
                         <span className="sm:text-2xl xl:text-3xl font-teyvat hover:font-lato hover:font-bold">Abyss</span>
-                        &nbsp;&nbsp;is a website designed to generate a player's profile and transform it into a customized card design.&nbsp;
+                        &nbsp;&nbsp;is a website designed to generate a player&#39;s profile and transform it into a customized card design.&nbsp;
                         I created this website for my portfolio and it is open source on GitHub. You can view it&nbsp;
                         <Link href="https://github.com/rushkii/abyss-card" className="text-sky-500">here</Link>.<br/><br/>
                         <span className="sm:text-2xl xl:text-3xl font-teyvat hover:font-lato hover:font-bold">Abyss</span>
