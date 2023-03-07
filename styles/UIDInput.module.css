@@ -1,0 +1,29 @@
+.inputBox {
+    @apply relative flex justify-center items-center;
+}
+
+.circleInput {
+    @apply mt-3 h-10 text-center bg-[#0d0c1e] rounded-lg
+    outline-none font-genshin px-3 placeholder:font-normal border
+    border-[#2f2f5e71] sm:w-52 absolute;
+}
+
+.circleInput::before {
+    @apply content-[''];
+    box-shadow: 0, 0, 5px, rgba(255, 255, 255, .3);
+}
+
+.circleInput::before:focus {
+    animation: circleinput 0.8s linear infinite;
+}
+
+@keyframes circleinput {
+    0% {
+        transform: rotate(0deg);
+        box-shadow: 0px 2px 1px #0456c8;
+    }
+    100% {
+        transform: rotate(360deg);
+        box-shadow: 0px 2px 1px #8004c8;
+    }
+}
