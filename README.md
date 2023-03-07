@@ -19,3 +19,8 @@ npm install
 npm run build
 npm start
 ```
+
+<h3 align="center">
+This project is still unfinished, you can help me out to
+build this project by creating a PR (Pull Request).
+</h3>
