@@ -1,0 +1,74 @@
+name: Deploy Docker image
+
+on:
+  push:
+    branches: ["master"]
+
+jobs:
+  ci:
+    name: CI
+    runs-on: ubuntu-latest
+    container: node:18.12-bullseye
+    timeout-minutes: 15
+    steps:
+      - uses: actions/checkout@v3
+      - uses: actions/setup-node@v3
+
+      - name: Dependencies cache
+        uses: actions/cache@v3
+        with:
+          path: ~/.npm
+          key: npm-${{ hashFiles('package-lock.json') }}
+          restore-keys: npm-
+
+      - name: Install dependencies
+        run: npm install
+
+      - name: Lint check
+        run: npm run -r lint
+
+      - name: Build frontend
+        run: npm run build
+        env:
+          NODE_ENV: production
+
+  cd-build:
+    name: CD - Build
+    runs-on: ubuntu-latest
+    timeout-minutes: 60
+    needs:
+      - ci
+    permissions:
+      contents: read
+      packages: write
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v3
+
+      - name: Set up Docker Buildx
+        uses: docker/setup-buildx-action@v2
+
+      - name: Log in to the Container registry
+        uses: docker/login-action@v2
+        with:
+          registry: ghcr.io
+          username: ${{ github.actor }}
+          password: ${{ secrets.GITHUB_TOKEN }}
+
+      - name: Extract metadata (tags, labels) for Docker
+        id: meta
+        uses: docker/metadata-action@v4
+        with:
+          images: ghcr.io/rushkii/abyss-card
+          flavor: |
+            latest=false
+          tags: |
+            type=edge
+            type=sha
+      - name: Build and push Docker image
+        uses: docker/build-push-action@v3
+        with:
+          context: .
+          push: true
+          tags: ${{ steps.meta.outputs.tags }}
+          labels: ${{ steps.meta.outputs.labels }}
