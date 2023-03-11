@@ -11,7 +11,7 @@ export default function App({ Component, pageProps }: AppProps) {
     <>
      <Head>
         <title>Abyss Card</title>
-        <meta name="description" content="A Gneshin Impact community website to fetch player's profile into a customized card design." />
+        <meta name="description" content="A Genshin Impact community website that fetches a player's profile and displays it in a customized card design." />
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         <link rel="icon" href="/favicon.ico" />
       </Head>
