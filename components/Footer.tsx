@@ -5,13 +5,13 @@ const Footer = () => {
                 Made with
                 <span className="text-red-600 sm:text-sm md:text-lg 2lg:text-xl"> ♥️</span> by
                 <span className="sm:text-xs md:text-sm 2lg:text-base font-bold">
-                    <a href="https://github.com/rushkii" className="text-sky-300"> Kiizuha</a>
+                    <a href="https://github.com/rushkii" className="text-sky-600 dark:text-sky-300"> Kiizuha</a>
                 </span>
             </div>
             <div className="sm:text-xs md:text-sm 2lg:text-base">
                 Powered by
                 <span className="sm:text-xs md:text-sm 2lg:text-base font-bold">
-                    <a href="https://api.enka.network/#/api" className="text-sky-300"> Enka.Network</a>
+                    <a href="https://api.enka.network/#/api" className="text-sky-600 dark:text-sky-300"> Enka.Network</a>
                 </span>
             </div>
         </div>
