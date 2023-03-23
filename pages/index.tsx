@@ -1,4 +1,4 @@
-import UIDInput from '@/components/users/UIDInput'
+import UIDInput from '@/components/uid/UIDInput'
 
 
 export default function Home() {
