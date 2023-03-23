@@ -9,3 +9,15 @@
 .inputBoxShadowFail {
     filter: drop-shadow(0 0 0 #ff161671) drop-shadow(0 0 7px #ff161671);
 }
+
+.iconButtonBoxShadowDefault {
+    filter: drop-shadow(0 0 0 rgba(80 80 80 / 0.03)) drop-shadow(0 0 7px rgb(80 80 80 / 0.5));
+}
+
+.iconButtonBoxShadowSuccess {
+    filter: drop-shadow(0 0 2px #16ff1699) drop-shadow(0 0 2px #16ff1699);
+}
+
+.iconButtonBoxShadowFail {
+    filter: drop-shadow(0 0 0 #ff161671) drop-shadow(0 0 7px #ff161671);
+}

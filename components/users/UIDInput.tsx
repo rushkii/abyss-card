@@ -12,7 +12,8 @@ const UIDInput = () => {
     const [uidInput, setUidInput] = useState("");
     const [borderColor, setBorderColor] = useState("border-[#4e4e8370]");
     const [iconColor, setIconColor] = useState("#4e4e8370");
-    const [boxShadow, setBoxShadow] = useState(styles.inputBoxShadowDefault)
+    const [boxShadowInput, setBoxShadowInput] = useState(styles.inputBoxShadowDefault)
+    const [boxShadowIcon, setBoxShadowIcon] = useState(styles.iconButtonBoxShadowDefault)
     const [warnText, setWarnText] = useState("");
     const [isValid, setIsValid] = useState(false);
     const router = useRouter();
@@ -24,7 +25,8 @@ const UIDInput = () => {
             setUidInput(e.target.value);
             setBorderColor("border-[#4e4e8370]");
             setIconColor("#4e4e8370");
-            setBoxShadow(styles.inputBoxShadowDefault)
+            setBoxShadowInput(styles.inputBoxShadowDefault)
+            setBoxShadowIcon(styles.iconButtonBoxShadowDefault)
             setWarnText("");
             setIsValid(false);
         }
@@ -33,11 +35,13 @@ const UIDInput = () => {
             if(e.target.value.length >= 9) {
                 setBorderColor("border-[#16ff1671]");
                 setIconColor("#16ff1671");
-                setBoxShadow(styles.inputBoxShadowSuccess)
+                setBoxShadowInput(styles.inputBoxShadowSuccess)
+                setBoxShadowIcon(styles.iconButtonBoxShadowSuccess)
                 setIsValid(true);
             } else {
                 setBorderColor("border-[#4e4e8370]");
-                setBoxShadow(styles.inputBoxShadowDefault)
+                setBoxShadowInput(styles.inputBoxShadowDefault)
+                setBoxShadowIcon(styles.iconButtonBoxShadowDefault)
                 setIconColor("#4e4e8370");
                 setIsValid(false);
             }
@@ -45,7 +49,8 @@ const UIDInput = () => {
             if(!(Object.keys(serverID).includes(e.target.value.charAt(0)))) {
                 setBorderColor("border-[#ff161671]");
                 setIconColor("#ff161671");
-                setBoxShadow(styles.inputBoxShadowFail)
+                setBoxShadowInput(styles.inputBoxShadowFail)
+                setBoxShadowIcon(styles.iconButtonBoxShadowFail)
                 setIsValid(false);
                 setWarnText(`Invalid UID! There is no UID startswith ${e.target.value.charAt(0)}`);
             } else {
@@ -96,7 +101,7 @@ const UIDInput = () => {
 
                 <div className="flex flex-col justify-center items-center pt-7">
                     <div className={`bg-[#070711] flex rounded-md border-2 transition
-                                    ease-in-out duration-150 ${borderColor} ${boxShadow}`}>
+                                    ease-in-out duration-150 ${borderColor} ${boxShadowInput}`}>
                         <form onSubmit={onSubmitInput} className="flex justify-center items-center">
                             <input className={`bg-transparent outline-none border-none w-[10em]
                                             text-center px-3 placeholder:text-sm`}
@@ -112,8 +117,8 @@ const UIDInput = () => {
                             ${uidInput.length >= 9 ? " " : "-translate-x-2"}`}
                                 disabled={uidInput === ""}
                                 onClick={onClick}>
-                                { !isValid? <MdOutlineClose className="text-2xl" color={iconColor}/>
-                                : <MdArrowForwardIos className="text-2xl" color={iconColor}/> }
+                                { !isValid? <MdOutlineClose className={`text-2xl ${boxShadowIcon}`} color={iconColor}/>
+                                : <MdArrowForwardIos className={`text-2xl ${boxShadowIcon}`} color={iconColor}/> }
                             </button>:
                             <div className={`transition ease-in duration-150 py-2 pr-2 disabled:cursor-not-allowed
                             ${uidInput.length >= 9 ? " " : "-translate-x-2"}`}>&nbsp;</div>
