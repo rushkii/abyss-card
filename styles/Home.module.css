@@ -31,6 +31,20 @@
   max-width: 30ch;
 }
 
+.background {
+  background-color: #000;
+  position: relative;
+}
+
+.background::before {
+  content: "";
+  background-image: url("../assets/images/khaenriah.jpg");
+  background-size: cover;
+  position: absolute;
+  inset: 0;
+  opacity: 0.5;
+}
+
 
 /* Enable hover only on non-touch devices */
 @media (hover: hover) and (pointer: fine) {
