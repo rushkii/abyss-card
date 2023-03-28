@@ -12,7 +12,7 @@ const HowToGetUID = () => {
 
     return (
         <>
-             <div className="font-light text-sm text-[#949494] underline cursor-help mt-3"
+             <div className="text-sm text-[#000000] dark:text-[#949494] underline cursor-help mt-3"
                 onClick={displayTutor}>How to get it?</div>
             {tutor ?
                 <div className={`${tutor ? "block": "hidden"} z-[999]`}>
