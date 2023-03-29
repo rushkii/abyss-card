@@ -38,11 +38,29 @@
 
 .background::before {
   content: "";
-  background-image: url("../assets/images/khaenriah.jpg");
+  background-image: url("../assets/images/Teyvat.jpg");
   background-size: cover;
   position: absolute;
   inset: 0;
-  opacity: 0.5;
+  opacity: 0.9;
+  filter: blur(3px);
+}
+
+
+@media (prefers-color-scheme: dark) {
+  .background {
+    background-color: #000;
+    position: relative;
+  }
+
+  .background::before {
+    content: "";
+    background-image: url("../assets/images/khaenriah.jpg");
+    background-size: cover;
+    position: absolute;
+    inset: 0;
+    opacity: 0.5;
+  }
 }
 
 
