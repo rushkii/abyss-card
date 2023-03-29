@@ -100,11 +100,12 @@ const UIDInput = () => {
                 </div>
 
                 <div className="flex flex-col justify-center items-center pt-7">
-                    <div className={`bg-[#070711] flex rounded-md border-2 transition
-                                    ease-in-out duration-150 ${borderColor} ${boxShadowInput}`}>
+                    <div className={`bg-[#ffffff3b] backdrop-blur-md dark:backdrop-blur-none
+                                    dark:bg-[#070711] flex rounded-md border-2 transition ease-in-out
+                                    duration-150 ${borderColor} ${boxShadowInput}`}>
                         <form onSubmit={onSubmitInput} className="flex justify-center items-center">
-                            <input className={`bg-transparent outline-none border-none w-[10em]
-                                            text-center px-3 placeholder:text-sm`}
+                            <input className="bg-transparent outline-none border-none w-[10em] text-center px-3
+                                            placeholder:text-sm placeholder:text-slate-600 placeholder:dark:text-white"
                                 placeholder="Input your UID..."
                                 type="tel"
                                 value={uidInput}
@@ -124,7 +125,7 @@ const UIDInput = () => {
                             ${uidInput.length >= 9 ? " " : "-translate-x-2"}`}>&nbsp;</div>
                         }
                     </div>
-                    {<label className="text-red-500 font-lato mt-2">{warnText}</label>}
+                    {<label className="font-bold text-red-700 dark:text-red-500 font-lato mt-2">{warnText}</label>}
                 </div>
 
             </div>
