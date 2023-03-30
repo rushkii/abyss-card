@@ -95,7 +95,8 @@ const UIDInput = () => {
         <div className="flex flex-col justify-center items-center">
             <div className="font-genshin transition-colors ease-in-out delay-75">
 
-                <div className={`sm:text-xl md:text-2xl 2lg:text-3xl 2xl:text-4xl text-center`}>
+                <div className="sm:text-xl md:text-2xl 2lg:text-3xl 2xl:text-4xl text-center sm:text-white
+                            lg:text-black dark:lg:text-white">
                     Please input your Genshin Impact UID in the box
                 </div>
 
